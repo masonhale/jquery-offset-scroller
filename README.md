@@ -2,7 +2,7 @@
 
 A jQuery plugin to enable smooth scrolling to a page anchor/id with a configurable offset.
 
-An offset can be helpful for pages with a fixed position header.
+http://masonhale.github.io/jquery-offset-scroller
 
 ## Demo
 
