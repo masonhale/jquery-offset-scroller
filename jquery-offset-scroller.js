@@ -16,33 +16,52 @@
 //
 (function($) {
 
-  function clickHandler( event ) {
-    var targetSel = $(this).attr("href");
-    // only support href's starting with '#'
-    if (targetSel && targetSel[0] === '#') {
+  function scrollToHash( hash, options ) {
+
+    var opts = $.extend( {}, $.fn.offsetScroller.defaults, options );
+
+    if (hash && hash[0] === '#') {
       var targetObj;
       try {
-        targetObj = $(targetSel);
+        targetObj = $(hash);
       }
       catch(e) {
-        console.log("offsetScroller could not scroll to: '" + targetSel + "'");
+        console.log("offsetScroller could not scroll to: '" + hash + "'");
       }
-      if (targetObj) {
-        var opts = event.data;
-        event.preventDefault();
+      var targetOffset = targetObj && targetObj.offset();
+      if (targetOffset) {
         $('html, body').animate(
-          {scrollTop: (targetObj.offset().top - opts.offsetPixels)},
+          {scrollTop: (targetOffset.top - opts.offsetPixels)},
           opts.animationSpeed);
-        return false;
+        return true;
       }
+    }
+    return false;
+  }
+
+  function updateUrl( hash ) {
+    if ( history.pushState && window.location.protocol !== 'file:' ) {
+      history.pushState( null, null, hash );
+    }
+  }
+
+  function clickHandler( event ) {
+    // Don't run if right-click or command/control + click
+    if ( event.button !== 0 || event.metaKey || event.ctrlKey ) return;
+
+    var targetSel = $(this).attr("href");
+
+    if ( targetSel && targetSel[0] === '#' ) {
+      var opts = event.data;
+      event.preventDefault();
+      updateUrl( targetSel );
+      scrollToHash( targetSel, opts );
     }
   }
 
   $.fn.offsetScroller = function( options ) {
-    var opts = $.extend( {}, $.fn.offsetScroller.defaults, options );
-
     return this.each( function() {
-      $(this).bind( 'click', opts, clickHandler );
+      $(this).bind( 'click', options, clickHandler );
     });
   };
 
@@ -50,6 +69,8 @@
     offsetPixels: 0,
     animationSpeed: 500
   }
+
+  $.fn.offsetScroller.scrollToHash = scrollToHash;
 
 })(jQuery);
 
