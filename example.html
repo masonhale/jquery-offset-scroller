@@ -44,7 +44,7 @@
 </head>
 <body>
 <div id="top">
-<h3>offsetScroller demo</h3>
+<h3>jQuery offsetScroller demo</h3>
 <div id="scroll-me">
 <a href="#box-1">Box 1</a> |
 <a href="#box-2">Box 2</a> |
@@ -95,7 +95,9 @@
    // attach offsetScroll to target elements
    $(document).ready(function() {
      $('#scroll-me a').offsetScroller({offsetPixels: 92});
-     $('.box a').offsetScroller({animationSpeed: 200});
+     $('.box a').offsetScroller({animationSpeed: 2000});
+     // to enable for all anchor links...
+     //$('a[href*=#]:not([href=#])').offsetScroller({offsetPixels:92});
    });
 </script>
 </body>
