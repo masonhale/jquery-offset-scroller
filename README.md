@@ -15,5 +15,8 @@ An offset can be helpful for pages with a fixed position header.
   $(document).ready(function() {
      $('a[href*=#]:not([href=#])').offsetScroller({offsetPixels:92});
   });
+
+  // auto scroll to #hash location on page load
+  $.fn.offsetScroller.scrollToHash(window.location.hash, {offsetPixels: 92});
 </script>
 ```
