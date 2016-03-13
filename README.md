@@ -11,13 +11,16 @@ An offset can be helpful for pages with a fixed position header.
 ## Usage
 ```html
 <script>
-  // add offset for all '#anchor' links
+  // update offsetPixels default to account for fixed position header
+  $().offsetScroller.defaults.offsetPixels = 92;
+
+  // add scroller for all '#anchor' links
   $(document).ready(function() {
-     $('a[href*=#]:not([href=#])').offsetScroller({offsetPixels:92});
+     $('a[href*=#]:not([href=#])').offsetScroller();
   });
 
   // auto scroll to #hash location on page load
-  $.fn.offsetScroller.scrollToHash(window.location.hash, {offsetPixels: 92});
+  $().offsetScroller.scrollToHash(window.location.hash);
 </script>
 ```
 
