@@ -20,3 +20,8 @@ An offset can be helpful for pages with a fixed position header.
   $.fn.offsetScroller.scrollToHash(window.location.hash, {offsetPixels: 92});
 </script>
 ```
+
+## License
+
+MIT License
+

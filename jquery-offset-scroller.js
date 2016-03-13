@@ -1,19 +1,4 @@
-// jQuery offsetScroller
-// Copyright (c) 2016 - Team Topia Inc.
-// Author: Mason Hale
-//
-// Provides handler to scroll smoothly to #anchor
-//
-// Options:
-//    offsetPixels: 0     // useful for fixed headers
-//    animationSpeed: 500 // in milliseconds
-//
-// Usage:
-//
-//    $(document).ready(function() {
-//      $('a[href*=#]:not([href=#])').offsetScroller({offsetPixels:92});
-//    });
-//
+
 (function($) {
 
   function scrollToHash( hash, options ) {
