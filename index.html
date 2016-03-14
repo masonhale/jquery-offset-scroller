@@ -56,17 +56,18 @@
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 
 <div class="highlight highlight-text-html-basic"><pre><span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
-<span class="pl-s1">  <span class="pl-c">// update offsetPixels default to account for fixed position header</span></span>
-<span class="pl-s1">  <span class="pl-en">$</span>().<span class="pl-smi">offsetScroller</span>.<span class="pl-smi">defaults</span>.<span class="pl-smi">offsetPixels</span> <span class="pl-k">=</span> <span class="pl-c1">92</span>;</span>
-<span class="pl-s1"></span>
 <span class="pl-s1">  <span class="pl-c">// add scroller for all '#anchor' links</span></span>
 <span class="pl-s1">  <span class="pl-en">$</span>(<span class="pl-c1">document</span>).<span class="pl-en">ready</span>(<span class="pl-k">function</span>() {</span>
+<span class="pl-s1">     <span class="pl-c">// update offsetPixels default to account for fixed position header</span></span>
+<span class="pl-s1">     <span class="pl-en">$</span>().<span class="pl-smi">offsetScroller</span>.<span class="pl-smi">defaults</span>.<span class="pl-smi">offsetPixels</span> <span class="pl-k">=</span> <span class="pl-c1">92</span>;</span>
+<span class="pl-s1">     </span>
 <span class="pl-s1">     <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>a[href*=#]:not([href=#])<span class="pl-pds">'</span></span>).<span class="pl-en">offsetScroller</span>();</span>
+<span class="pl-s1">     <span class="pl-c">// auto scroll to #hash location on page load</span></span>
+<span class="pl-s1">     <span class="pl-en">$</span>().<span class="pl-smi">offsetScroller</span>.<span class="pl-en">scrollToHash</span>(<span class="pl-c1">window</span>.<span class="pl-c1">location</span>.<span class="pl-c1">hash</span>);</span>
 <span class="pl-s1">  });</span>
 <span class="pl-s1"></span>
-<span class="pl-s1">  <span class="pl-c">// auto scroll to #hash location on page load</span></span>
-<span class="pl-s1">  <span class="pl-en">$</span>().<span class="pl-smi">offsetScroller</span>.<span class="pl-en">scrollToHash</span>(<span class="pl-c1">window</span>.<span class="pl-c1">location</span>.<span class="pl-c1">hash</span>);</span>
 <span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
+
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
