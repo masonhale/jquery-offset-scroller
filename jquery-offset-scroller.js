@@ -1,4 +1,6 @@
-
+// jQuery offsetScroller
+// Copyright (c) 2016 Mason Hale
+// MIT License
 (function($) {
 
   function scrollToHash( hash, options ) {
