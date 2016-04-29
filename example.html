@@ -1,7 +1,7 @@
 <html>
 <head>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" src="jquery-offset-scroller.js"></script>
+<script type="text/javascript" src="jquery.offset-scroller.js"></script>
 <style>
 
    body {
@@ -97,7 +97,7 @@
      $('#scroll-me a').offsetScroller({offsetPixels: 92});
      $('.box a').offsetScroller({animationSpeed: 2000});
      // to enable for all anchor links...
-     //$('a[href*=#]:not([href=#])').offsetScroller({offsetPixels:92});
+     //$('a[href*="#"]:not([href="#"])').offsetScroller({offsetPixels:92});
      $().offsetScroller.scrollToHash(window.location.hash, {offsetPixels: 92});
    });
 </script>
