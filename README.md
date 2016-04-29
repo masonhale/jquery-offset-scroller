@@ -20,7 +20,7 @@ See <a href="http://codepen.io/masonhale/pen/BKLdqE/">jQuery offsetScroller</a> 
     $().offsetScroller.defaults.offsetPixels = 92;
 
     // add scroller for all '#anchor' links
-    $('a[href*=#]:not([href=#])').offsetScroller();
+    $('a[href*="#"]:not([href="#"])').offsetScroller();
 
     // auto scroll to #hash location on page load
     $().offsetScroller.scrollToHash(window.location.hash);
